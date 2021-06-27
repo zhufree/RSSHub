@@ -212,6 +212,18 @@ pageClass: routes
 
 <Route author="nczitzk" example="/esquirehk/tag/Fashion" path="/esquirehk/tag/:id" :paramsDesc="['标签，可在对应标签页 URL 中找到']" />
 
+## ezone.hk
+
+### 分类
+
+<Route author="nczitzk" example="/ezone" path="/ezone/:category?" :paramsDesc="['分类，见下表，默认为最新内容']">
+
+| 科技焦點 | 網絡生活 | 教學評測 | IT Times |
+| -------- | -------- | -------- | -------- |
+| srae001  | srae008  | srae017  | srae021  |
+
+</Route>
+
 ## GQ
 
 ### GQ 台湾
@@ -275,6 +287,18 @@ Tag
 ### Posts
 
 <Route author="loganrockmore" example="/grubstreet" path="/grubstreet" />
+
+## HKEPC
+
+### HKEPC 電腦領域
+
+<Route author="TonyRL" example="/hkepc/news" path="/hkepc/:category?" :paramsDesc="['分類，見下表，默认为最新消息']">
+
+| 專題報導   | 新聞中心 | 新品快遞 | 超頻領域 | 流動數碼 | 生活娛樂      | 會員消息 | 腦場新聞 | 業界資訊 | 最新消息 |
+| ---------- | -------- | -------- | -------- | -------- | ------------- | -------- | -------- | -------- | -------- |
+| coverStory | news     | review   | ocLab    | digital  | entertainment | member   | price    | press    | latest   |
+
+</Route>
 
 ## iDaily 每日环球视野
 
@@ -409,13 +433,9 @@ IPFS 网关有可能失效，那时候换成其他网关。
 
 ## Matters
 
-### 熱門文章
-
-<Route author="Cerebrater" example="/matters/hot" path="/matters/hot" radar="1" rssbud="1"/>
-
 ### 最新、熱議、精華
 
-<Route author="xyqfer Cerebrater" example="/matters/latest/heat" path="/matters/latest/:type?" :paramsDesc="['默認爲 latest, 見下表']" radar="1" rssbud="1">
+<Route author="xyqfer Cerebrater xosdy" example="/matters/latest/heat" path="/matters/latest/:type?" :paramsDesc="['默認爲 latest, 見下表']" radar="1" rssbud="1">
 
 | 最新   | 熱議 | 精華    |
 | ------ | ---- | ------- |
@@ -429,7 +449,7 @@ IPFS 网关有可能失效，那时候换成其他网关。
 
 ### 作者
 
-<Route author="Cerebrater" example="/matters/author/az" path="/matters/author/:uid" :paramsDesc="['作者 id，可在作者主頁的 URL 找到']" radar="1" rssbud="1"/>
+<Route author="Cerebrater xosdy" example="/matters/author/az" path="/matters/author/:uid" :paramsDesc="['作者 id，可在作者主頁的 URL 找到']" radar="1" rssbud="1"/>
 
 ## MIT 科技评论
 
@@ -452,6 +472,18 @@ IPFS 网关有可能失效，那时候换成其他网关。
 | All | Research | Announcements | Events | Milestones |
 | --- | -------- | ------------- | ------ | ---------- |
 |     | research | announcements | events | milestones |
+
+</Route>
+
+## OR
+
+### 频道
+
+<Route author="ncziztk" example="/or" path="/or/id?" :paramsDesc="['id，见下表，默认为首页']">
+
+| 首页 | 商业 | 金融  | 政经 | 社会与文化 | 领导力 | 生活时尚 | 视频   |
+| ---- | ---- | ----- | ---- | ---------- | ------ | -------- | ------ |
+|      | 7174 | 15176 | 8943 | 14910      | 11813  | 24138    | 324234 |
 
 </Route>
 
@@ -578,6 +610,16 @@ IPFS 网关有可能失效，那时候换成其他网关。
 Provides all of the Thrillist articles with the specified tag.
 
 </Route>
+
+## Topbook
+
+### Overview
+
+<Route author="nczitzk" example="/topbook/overview/24" path="/topbook/overview/:id?" :paramsDesc="['id，可在对应页面 URL 中找到，默认为今天看什么']"/>
+
+### 今天看什么
+
+<Route author="nczitzk" example="/topbook/today" path="/topbook/today"/>
 
 ## TOPYS
 
@@ -1249,6 +1291,16 @@ others = 热点新闻 + 滚动新闻
 
 </Route>
 
+## 加美财经
+
+<Route author="nczitzk" example="/caus" path="/caus/:category?" :paramsDesc="['分类，见下表，默认为全部']">
+
+| 全部 | 要闻 | 商业 | 快讯 | 投资理财 | 生活 |
+| ---- | ---- | ---- | ---- | -------- | ---- |
+| 0    | 1    | 2    | 3    | 4        | 6    |
+
+</Route>
+
 ## 贾真的电商 108 将
 
 ### 「108 将」实战分享
@@ -1576,6 +1628,10 @@ column 为 third 时可选的 category:
 
 ## 鸟哥笔记
 
+### 首页
+
+<Route author="WenryXu" example="/ngbj" path="/ngbj"/>
+
 ### 今日事
 
 <Route author="KotoriK" example="/ngbj/today" path="/ngbj/today"/>
@@ -1764,6 +1820,10 @@ column 为 third 时可选的 category:
 
 ## 深圳新闻网
 
+### 深圳市政府新闻发布厅
+
+<Route author="nczitzk" example="/sznews/press" path="/sznews/press"/>
+
 ### 排行榜
 
 <Route author="nczitzk" example="/sznews/ranking" path="/sznews/ranking"/>
@@ -1941,8 +2001,8 @@ column 为 third 时可选的 category:
 
 <Route author="mjysci" example="/netease/dy2/T1555591616739" path="/netease/dy2/:id" :paramsDesc="['id，该网易号主页网址最后一项html的文件名']" anticrawler="1"/>
 
-优先使用方法一，若是网易号搜索页面搜不到的小众网易号（文章页面不含`data-wemediaid`）则可使用此法。  
-触发反爬会只抓取到标题，建议自建。  
+优先使用方法一，若是网易号搜索页面搜不到的小众网易号（文章页面不含`data-wemediaid`）则可使用此法。
+触发反爬会只抓取到标题，建议自建。
 
 ## 网易新闻
 
@@ -2041,6 +2101,10 @@ column 为 third 时可选的 category:
 ### 公众号 (wxnmh.com 来源)
 
 <Route author="laampui" example="/wechat/wxnmh/51798" path="/wechat/wxnmh/:id" :paramsDesc="['公众号 id, 打开 wxnmh.com, 在 URL 中找到 id']"/>
+
+### 公众号 (wechat-feeds 来源)
+
+<Route author="tylinux" example="/wechat/feeds/MzIwMzAwMzQxNw==" path="/wechat/feeds/:id" :paramsDesc="['公众号 id, 打开 `https://wechat.privacyhide.com/`, 在选定公众号的订阅 URL 中找到 id, 不包含最后的 .xml']"/>
 
 ### 公众号栏目 (非推送 & 历史消息)
 
@@ -2150,6 +2214,12 @@ column 为 third 时可选的 category:
 
 </Route>
 
+## 新华网
+
+### 新华社新闻
+
+<Route author="nczitzk" example="/news/whxw" path="/news/whxw"/>
+
 ## 新浪专栏
 
 ### 创事记
@@ -2231,16 +2301,15 @@ column 为 third 时可选的 category:
 
 ## 游戏葡萄
 
-无文章正文，仅有目录索引。
+### 文章
 
-### 全部文章
+<Route author="KotoriK nczitzk" example="/gamegrape/13" path="/gamegrape/:id?" :paramsDesc="['分类 id，见下表，默认为全部']">
 
-<Route author="KotoriK" example="/gamegrape" path="/gamegrape/index"/>
+| 全部 | 深度 | 资讯 | DemoWall | 酷玩 | 海外 | 专栏 | 葡萄观察 |
+| ---- | ---- | ---- | -------- | ---- | ---- | ---- | -------- |
+|      | 13   | 14   | 15       | 16   | 17   | 18   | 19       |
 
-### 分类
-
-例子对应[深度分类](http://youxiputao.com/article/index/id/13)
-<Route author="KotoriK" example="/gamegrape/13" path="/gamegrape/:id?"/>
+</Route>
 
 ## 鱼塘热榜
 
@@ -2302,6 +2371,12 @@ column 为 third 时可选的 category:
 ### 评论与特写
 
 <Route author="nczitzk" example="/clb/commentary" path="/clb/commentary/:lang?" :paramsDesc="['语言，默认为简体中文，可选 `en` 即英文']"/>
+
+## 中国橡胶网
+
+### 新闻资讯
+
+<Route author="nczitzk" example="/cria/news/1" path="/cria/news/:id?" :paramsDesc="['列表 id，可在列表页的 URL 中找到，默认为首页']"/>
 
 ## 眾新聞
 
